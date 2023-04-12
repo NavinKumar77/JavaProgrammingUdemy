@@ -1,17 +1,20 @@
 public class Main {
     public static void main(String[] args) {
-        boolean gameover = true;
-        int score = 800;
-        int level = 5;
-        int bonus = 100;
-        if(score < 5000 && score > 1000){
-            System.out.println("Your score was less than 5000 but greater than 1000");
-        }
-        else if(score < 1000){
-            System.out.println("Your score was less than 1000");
-        }
-        else{
-            System.out.println("Got Here");
+        Animal animal = new Animal("Generic Animal","Huge",400);
+        doAnimalStuff(animal,"Slow");
+        Dog dog = new Dog();
+        doAnimalStuff(dog,"Fast");
+        Dog yorkie = new Dog("Yorkie",15);
+        doAnimalStuff(yorkie,"Fast");
+        Dog labrador = new Dog("Retriever",65,"Floppy","Swimmer");
+        doAnimalStuff(labrador,"Slow");
+    }
+
+        public static void doAnimalStuff(Animal animal,String speed){
+             animal.makeNoise();
+             animal.move(speed);
+             System.out.println(animal);
+             System.out.println("_ _ _ _");
         }
     }
-}
+
